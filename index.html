@@ -5,77 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Arduino IDEインストールマニュアル - IoP技術者講座 2025 PROMPT-X">
     <title>Arduino IDEインストールマニュアル | IoP技術者講座</title>
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content="0; url=viewer.html">
+    <style>
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        
+        .redirect-message {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .fallback-link {
+            color: white;
+            text-decoration: underline;
+            margin-top: 15px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="header-info">
-                <span class="course-name">IoP技術者講座</span>
-                <span class="year">2025 PROMPT-X</span>
-            </div>
-        </header>
-
-        <main>
-            <div class="document-info">
-                <h1>Arduino IDEインストールマニュアル</h1>
-                
-                <div class="summary">
-                    <p>本マニュアルでは講座で使用するアプリケーションと、USB シリアル通信を行うための USB ドライバのインストールを行う手順を説明します。</p>
-                </div>
-
-                <div class="contents">
-                    <h2>主な内容</h2>
-                    <ul>
-                        <li>Arduino IDE のインストール</li>
-                        <li>Arduino-ESP32 サポート のインストール</li>
-                        <li>USB ドライバのインストール</li>
-                        <li>システム要件と注意事項</li>
-                    </ul>
-                </div>
-
-                <div class="download-section">
-                    <h2>マニュアル閲覧・ダウンロード</h2>
-                    <div class="action-buttons">
-                        <a href="main.pdf" class="action-btn primary" target="_blank">
-                            <span class="icon">👁️</span>
-                            <span class="text">ブラウザで開く</span>
-                            <span class="size">(2.5MB)</span>
-                        </a>
-                        <a href="main.pdf" class="action-btn secondary" download>
-                            <span class="icon">💾</span>
-                            <span class="text">ダウンロード</span>
-                            <span class="size">(2.5MB)</span>
-                        </a>
-                        <a href="viewer.html" class="action-btn tertiary" target="_blank">
-                            <span class="icon">🔍</span>
-                            <span class="text">フルスクリーン表示</span>
-                            <span class="size">おすすめ</span>
-                        </a>
-                    </div>
-                    <p class="viewing-note">
-                        💡 <strong>ヒント：</strong> ブラウザで開くとオンラインで閲覧できます。印刷や保存が必要な場合はダウンロードをお選びください。フルスクリーン表示では快適な閲覧体験を提供します。
-                    </p>
-                </div>
-
-                <div class="important-note">
-                    <h3>⚠️ 重要な注意事項</h3>
-                    <p>PCのユーザー名（ユーザーフォルダ名）に日本語、スペース、アクセント記号付き文字などが含まれている場合、Arduino IDEが正しく動作しない場合があります。半角英数字のみで構成されている環境を推奨します。</p>
-                </div>
-            </div>
-        </main>
-
-        <footer>
-            <div class="footer-links">
-                <a href="https://github.com/ptk-y-nakahira/typst-iop-advance-materials" target="_blank">
-                    📁 GitHub リポジトリ
-                </a>
-                <a href="main.typ" target="_blank">
-                    📝 Typst ソースファイル
-                </a>
-            </div>
-            <p class="copyright">© 2025 PROMPT-X - IoP技術者講座</p>
-        </footer>
+    <div class="redirect-message">
+        <div class="spinner"></div>
+        <h2>Arduino IDEインストールマニュアル</h2>
+        <p>フルスクリーンビューアーに移動しています...</p>
+        <p><small>自動的に移動しない場合は、<a href="viewer.html" class="fallback-link">こちらをクリック</a>してください。</small></p>
     </div>
+    
+    <script>
+        // JavaScript fallback for immediate redirect
+        window.location.replace('viewer.html');
+    </script>
 </body>
 </html>
