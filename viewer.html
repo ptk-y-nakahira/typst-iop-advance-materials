@@ -65,6 +65,16 @@
             color: white;
         }
 
+        .control-btn.home {
+            background: rgba(52, 152, 219, 0.2);
+            border-color: rgba(52, 152, 219, 0.4);
+        }
+
+        .control-btn.home:hover {
+            background: rgba(52, 152, 219, 0.3);
+            border-color: rgba(52, 152, 219, 0.6);
+        }
+
         .pdf-frame {
             flex: 1;
             width: 100%;
@@ -149,16 +159,36 @@
         .fallback-options a:hover {
             text-decoration: underline;
         }
+
+        /* Welcome message */
+        .welcome-note {
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 0.85em;
+            margin-right: 15px;
+            display: none;
+        }
+
+        .welcome-note.show {
+            display: block;
+        }
     </style>
 </head>
 <body>
     <div class="viewer-container">
         <div class="viewer-header">
-            <div class="document-title">Arduino IDEインストールマニュアル</div>
+            <div style="display: flex; align-items: center;">
+                <div class="welcome-note" id="welcomeNote">
+                    📖 フルスクリーン表示モード
+                </div>
+                <div class="document-title">Arduino IDEインストールマニュアル</div>
+            </div>
             <div class="viewer-controls">
                 <a href="main.pdf" class="control-btn" download>💾 ダウンロード</a>
                 <a href="main.pdf" class="control-btn" target="_blank">🔗 新しいタブで開く</a>
-                <a href="index.html" class="control-btn">🏠 ホームに戻る</a>
+                <a href="home.html" class="control-btn home">⚙️ オプション</a>
             </div>
         </div>
 
@@ -179,8 +209,16 @@
     <script>
         function hideLoading() {
             const loadingMessage = document.getElementById('loadingMessage');
+            const welcomeNote = document.getElementById('welcomeNote');
             if (loadingMessage) {
                 loadingMessage.style.display = 'none';
+            }
+            // Show welcome note briefly
+            if (welcomeNote) {
+                welcomeNote.classList.add('show');
+                setTimeout(() => {
+                    welcomeNote.classList.remove('show');
+                }, 3000); // Hide after 3 seconds
             }
         }
 
@@ -196,7 +234,7 @@
                         <div class="fallback-options">
                             <a href="main.pdf" target="_blank">新しいタブでPDFを開く</a>
                             <a href="main.pdf" download>PDFをダウンロード</a>
-                            <a href="index.html">ホームページに戻る</a>
+                            <a href="home.html">オプション画面に移動</a>
                         </div>
                     </div>
                 `;
@@ -220,15 +258,19 @@
 
         // Keyboard shortcuts
         document.addEventListener('keydown', function(e) {
-            // Escape key to go back to home
+            // Escape key to go to options
             if (e.key === 'Escape') {
-                window.location.href = 'index.html';
+                window.location.href = 'home.html';
             }
             // F11 for fullscreen (browser handled)
             // Ctrl+D for download
             if (e.ctrlKey && e.key === 'd') {
                 e.preventDefault();
                 window.open('main.pdf', '_blank');
+            }
+            // H key for home/options
+            if (e.key === 'h' || e.key === 'H') {
+                window.location.href = 'home.html';
             }
         });
     </script>
