@@ -119,34 +119,89 @@ h3 {
     margin-bottom: 20px;
 }
 
-.download-btn {
+/* Action buttons container */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+/* Action button base styles */
+.action-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background-color: white;
-    color: #667eea;
+    gap: 8px;
     text-decoration: none;
-    padding: 15px 30px;
+    padding: 12px 20px;
     border-radius: 8px;
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 0.95em;
     transition: all 0.3s ease;
+    min-width: 160px;
+    justify-content: center;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* Primary button (Browse) */
+.action-btn.primary {
+    background-color: white;
+    color: #667eea;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.download-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+.action-btn.primary:hover {
     background-color: #f8f9fa;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.download-btn .icon {
-    font-size: 1.3em;
+/* Secondary button (Download) */
+.action-btn.secondary {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-.download-btn .size {
+.action-btn.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Tertiary button (Full screen) */
+.action-btn.tertiary {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.action-btn.tertiary:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.action-btn .icon {
+    font-size: 1.2em;
+}
+
+.action-btn .size {
+    font-size: 0.8em;
+    opacity: 0.8;
+}
+
+/* Viewing note */
+.viewing-note {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 15px;
     font-size: 0.9em;
-    color: #666;
+    text-align: left;
+    margin-top: 20px;
+    line-height: 1.5;
 }
 
 /* Important note */
@@ -218,9 +273,14 @@ footer {
         gap: 5px;
     }
     
-    .download-btn {
-        padding: 12px 20px;
-        font-size: 1em;
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action-btn {
+        width: 100%;
+        max-width: 280px;
     }
     
     .footer-links a {
@@ -240,5 +300,10 @@ footer {
     
     .summary, .contents ul, .important-note {
         padding: 15px;
+    }
+    
+    .action-btn {
+        padding: 10px 15px;
+        font-size: 0.9em;
     }
 }
