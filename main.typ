@@ -206,7 +206,7 @@ caption: "環境設定",
   inset: 8pt,
   fill: gray-100,
   radius: 2pt,
-)[`https://espressif.github.io/arduino-esp32/package_esp32_index.json`]
+)[#raw("https://espressif.github.io/arduino-esp32/package_esp32_index.json")]
 
 
 *OK* ボタンをクリックします。
